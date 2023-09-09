@@ -12,7 +12,7 @@ export function MenuItem({ address }: MenuItemProps) {
 
   return (
     <button
-      className="flex flex-col w-full py-2 px-6 gap-1 rounded-xl data-[active=true]:bg-slate-200/50 transition"
+      className="flex flex-col w-full py-2 px-6 gap-1 rounded-xl data-[active=true]:bg-slate-200/50 hover:bg-slate-200/30 transition"
       data-active={currentAddress && currentAddress.uuid === address.uuid}
       onClick={() => {
         onChangeAddress(address);

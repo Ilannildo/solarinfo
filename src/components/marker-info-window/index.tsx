@@ -18,6 +18,8 @@ export function MarkerInfoWindow({ currentAddress }: MarkerInfoWindowProps) {
       }
     );
 
+  console.log(currentAddressBuildingInsightsResponse);
+
   return (
     <div className="w-full flex flex-col gap-4">
       <div className="w-full">
@@ -31,7 +33,7 @@ export function MarkerInfoWindow({ currentAddress }: MarkerInfoWindowProps) {
 
       {isLoading ? (
         <div className="w-full bg-slate-200/30 py-4 px-4 text-center gap-1 flex flex-col rounded-lg">
-          <span className="text-xs font-normal text-slate-600 animate-pulse">
+          <span className="text-sm font-normal text-slate-600 animate-pulse">
             Buscando mais informações
           </span>
         </div>
@@ -39,7 +41,7 @@ export function MarkerInfoWindow({ currentAddress }: MarkerInfoWindowProps) {
         <>
           {!currentAddressBuildingInsightsResponse && (
             <div className="w-full bg-slate-200/30 py-4 px-4 text-center gap-1 flex flex-col rounded-lg">
-              <span className="text-xs font-normal text-yellow-600">
+              <span className="text-sm font-normal text-yellow-600">
                 Este endereço não possui informações sobre Painéis Solares
               </span>
             </div>
@@ -71,6 +73,7 @@ export function MarkerInfoWindow({ currentAddress }: MarkerInfoWindowProps) {
                       currentAddressBuildingInsightsResponse.solarPotential
                         .panelCapacityWatts
                     }
+                    kwp
                   </h1>
                 </div>
               </li>
@@ -79,8 +82,8 @@ export function MarkerInfoWindow({ currentAddress }: MarkerInfoWindowProps) {
                   <span className="text-xs font-normal text-slate-500">
                     Economia esperada
                   </span>
-                  <h1 className="text-base font-bold text-slate-800">
-                    R$ 10.000,50/year
+                  <h1 className="text-base font-bold text-gray-400">
+                    Não disponível
                   </h1>
                 </div>
               </li>
