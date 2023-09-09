@@ -9,7 +9,7 @@ export const RootProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AddressProvider>{children}</AddressProvider>;
+      <AddressProvider>{children}</AddressProvider>
     </QueryClientProvider>
   );
 };
