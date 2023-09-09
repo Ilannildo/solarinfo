@@ -5,7 +5,7 @@ import { IAddress } from "@/stores/addresses/type";
 
 export default async function Page() {
   const response = await fetch(`${apiUrl}/addresses`);
-  const addresses = (await response.json()) as IAddress[];
+  const addresses = await response.json() as IAddress[];
 
   return (
     <div className="flex w-full h-screen bg-slate-50">
