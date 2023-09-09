@@ -15,7 +15,7 @@ export async function SidebarContent() {
           <LogoContent />
         </div>
       </div>
-      <ScrollArea className="h-full w-full px-6 py-6" >
+      <ScrollArea className="h-[700px] lg:h-[600px] w-full px-6 py-6" >
         {addresses && (
           <ul className="space-y-6 font-medium">
             {addresses.map((address) => (
