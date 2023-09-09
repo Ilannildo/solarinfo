@@ -1,4 +1,3 @@
-import Sidebar from "@/components/sidebar";
 import { RootProvider } from "@/providers";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -19,18 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <RootProvider>
-          <div className="flex w-full h-screen bg-slate-50">
-            <Sidebar />
-            <div className="flex flex-col flex-1 w-full">
-              <main className="h-full lg:overflow-y-auto">
-                <div className="relative w-full h-screen bg-slate-50 p-3 ">
-                  {children}
-                </div>
-              </main>
-            </div>
-          </div>
-        </RootProvider>
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   );

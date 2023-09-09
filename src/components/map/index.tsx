@@ -1,9 +1,14 @@
-'use client';
+"use client";
 
+import { IAddress } from "@/stores/addresses/type";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import { MapLoading } from "../map-loading";
 
-export function Map() {
+interface MapProps {
+  addresses: IAddress[];
+}
+
+export function Map({ addresses }: MapProps) {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY!,
