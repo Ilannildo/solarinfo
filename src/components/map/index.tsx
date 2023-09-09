@@ -28,14 +28,13 @@ export function Map({ addresses }: MapProps) {
             lng: Number(currentAddress.longitude),
           }
         : {
-            lat: -22.224402780617687,
-            lng: -54.78081860349796,
+            lat: -22.2159848,
+            lng: -54.8054409,
           },
     [currentAddress]
   );
 
   if (!isLoaded) return <MapLoading />;
-
 
   return (
     <GoogleMap

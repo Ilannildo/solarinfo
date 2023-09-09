@@ -1,5 +1,6 @@
 import { Map } from "@/components/map";
 import { Sidebar } from "@/components/sidebar/components/desktop-sidebar";
+import { MobileSidebar } from "@/components/sidebar/components/mobile-sidebar";
 import { apiUrl } from "@/services/api";
 import { IAddress } from "@/stores/addresses/type";
 
@@ -8,10 +9,11 @@ export default async function Page() {
   const addresses = (await response.json()) as IAddress[];
 
   return (
-    <div className="flex w-full h-screen bg-slate-50">
+    <div className="flex w-full h-screen flex-col lg:flex-row bg-slate-50 relative">
       <Sidebar addresses={addresses} />
-      <div className="relative w-full h-screen bg-slate-50 p-3 ">
-        <div className="flex items-center justify-center bg-slate-200 h-full rounded-2xl overflow-hidden">
+      <MobileSidebar addresses={addresses} />
+      <div className="relative w-full h-screen bg-slate-50 lg:p-3">
+        <div className="flex items-center justify-center bg-slate-200 h-full lg:rounded-2xl overflow-hidden">
           <Map addresses={addresses} />
         </div>
       </div>

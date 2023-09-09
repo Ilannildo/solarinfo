@@ -12,7 +12,6 @@ interface MarkersListProps {
 export function MarkersList({ addresses }: MarkersListProps) {
   const { currentAddress, onChangeAddress } = useAddress();
 
-
   return (
     <>
       {addresses.map((address) => (

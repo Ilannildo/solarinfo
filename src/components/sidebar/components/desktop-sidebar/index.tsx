@@ -13,7 +13,7 @@ export function Sidebar({ addresses }: SidebarProps) {
       id="desktopSidebar"
       className="z-30 flex-shrink-0 hidden w-80 overflow-y-auto lg:block"
     >
-      <div className="h-screen overflow-hidden bg-background dark:bg-sidebar py-4">
+      <div className="h-screen overflow-hidden bg-background dark:bg-sidebar py-4 relative">
         <div className="px-6 py-6">
           <div className="w-full flex items-center justify-center">
             <LogoContent />
@@ -30,6 +30,13 @@ export function Sidebar({ addresses }: SidebarProps) {
             </ul>
           )}
         </ScrollArea>
+        <div className="w-full py-2 px-4 text-[10px] absolute bottom-0 text-center text-slate-400 font-thin">
+          <a href="https://github.com/ilannildo" target="_blank">
+            Powered by {" "}
+            <b className="font-bold text-slate-900">Ilannildo V Cruz</b> - Full
+            Stack Developer
+          </a>
+        </div>
       </div>
     </aside>
   );

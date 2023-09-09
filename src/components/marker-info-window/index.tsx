@@ -1,9 +1,7 @@
 "use client";
 
 import { useAddressBuildingInsights } from "@/stores/addresses";
-import {
-  IAddress
-} from "@/stores/addresses/type";
+import { IAddress } from "@/stores/addresses/type";
 
 interface MarkerInfoWindowProps {
   currentAddress: IAddress;
@@ -19,8 +17,6 @@ export function MarkerInfoWindow({ currentAddress }: MarkerInfoWindowProps) {
         enabled: !!currentAddress,
       }
     );
-
-  console.log(currentAddressBuildingInsightsResponse)
 
   return (
     <div className="w-full flex flex-col gap-4">
