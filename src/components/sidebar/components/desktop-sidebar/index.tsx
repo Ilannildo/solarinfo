@@ -1,13 +1,39 @@
+"use client";
+
 import { LogoContent } from "@/components/logo-content";
 import { MenuItem } from "@/components/menu-item";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useAddress } from "@/hooks/use-address";
 import { IAddress } from "@/stores/addresses/type";
+import { useEffect, useRef } from "react";
 
 interface SidebarProps {
   addresses: IAddress[];
 }
 
 export function Sidebar({ addresses }: SidebarProps) {
+  const { currentAddress } = useAddress();
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!currentAddress) {
+      return;
+    }
+
+    if (scrollRef.current) {
+      const selectedHourButton = scrollRef.current.querySelector(
+        `[data-uuid="${currentAddress.uuid}"]`
+      ) as HTMLButtonElement | null;
+
+      if (selectedHourButton) {
+        selectedHourButton.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  }, [currentAddress]);
+
   return (
     <aside
       id="desktopSidebar"
@@ -19,12 +45,32 @@ export function Sidebar({ addresses }: SidebarProps) {
             <LogoContent />
           </div>
         </div>
-        <ScrollArea className="h-[700px] lg:h-[600px] w-full px-6 py-6">
+        <ScrollArea
+          ref={scrollRef}
+          className="h-[700px] lg:h-[600px] w-full px-6 py-6"
+        >
           {addresses && (
             <ul className="space-y-6 font-medium">
               {addresses.map((address) => (
                 <li key={address.uuid}>
-                  <MenuItem address={address} />
+                  <MenuItem
+                    address={address}
+                    onClick={() => {
+                      if (scrollRef.current) {
+                        const selectedHourButton =
+                          scrollRef.current.querySelector(
+                            `[data-uuid="${address.uuid}"]`
+                          ) as HTMLButtonElement | null;
+
+                        if (selectedHourButton) {
+                          selectedHourButton.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                          });
+                        }
+                      }
+                    }}
+                  />
                 </li>
               ))}
             </ul>
@@ -32,7 +78,7 @@ export function Sidebar({ addresses }: SidebarProps) {
         </ScrollArea>
         <div className="w-full py-2 px-4 text-[10px] absolute bottom-0 text-center text-slate-400 font-thin">
           <a href="https://github.com/ilannildo" target="_blank">
-            Powered by {" "}
+            Powered by{" "}
             <b className="font-bold text-slate-900">Ilannildo V Cruz</b> - Full
             Stack Developer
           </a>

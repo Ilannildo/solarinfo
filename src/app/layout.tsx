@@ -8,6 +8,7 @@ const inter = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"]
 export const metadata: Metadata = {
   title: "Solar Info - Potencial Solar",
   description: "Sistema desenvolvido como requisito para Desenvolvedor Full Stack na SolarApp",
+  keywords: "energia, sol, painel, solar, planejamento, gestão, empresarial, fotovoltaico"
 };
 
 export default function RootLayout({
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html>
       <body className={inter.className}>
         <RootProvider>{children}</RootProvider>
       </body>
