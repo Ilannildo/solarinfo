@@ -46,7 +46,10 @@ export function Map({ addresses }: MapProps) {
       zoom={zoom}
       options={{
         fullscreenControl: false,
-        isFractionalZoomEnabled: true
+        isFractionalZoomEnabled: true,
+        streetViewControl: false,
+        mapTypeControl: false,
+
       }}
     >
       <MarkersList addresses={addresses} />

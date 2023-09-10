@@ -12,7 +12,7 @@ interface SidebarProps {
 }
 
 export function Sidebar({ addresses }: SidebarProps) {
-  const { currentAddress } = useAddress();
+  const { currentAddress, onChangeAddress } = useAddress();
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -33,6 +33,15 @@ export function Sidebar({ addresses }: SidebarProps) {
       }
     }
   }, [currentAddress]);
+
+  useEffect(() => {
+    if (addresses && addresses.length > 0) {
+      setTimeout(() => {
+        onChangeAddress(addresses[0]);
+      }, 500);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [addresses]);
 
   return (
     <aside
