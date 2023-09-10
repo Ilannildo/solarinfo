@@ -1,3 +1,4 @@
+import { LogoContent } from "@/components/logo-content";
 import { Map } from "@/components/map";
 import { Sidebar } from "@/components/sidebar/components/desktop-sidebar";
 import { MobileSidebar } from "@/components/sidebar/components/mobile-sidebar";
@@ -13,6 +14,9 @@ export default async function Page() {
       <Sidebar addresses={addresses} />
       <MobileSidebar addresses={addresses} />
       <div className="relative w-full h-screen bg-slate-50 lg:p-3">
+        <header className="lg:hidden z-10 flex items-center justify-center w-full py-2 bg-white/20 backdrop-blur-lg">
+          <LogoContent />
+        </header>
         <div className="flex items-center justify-center bg-slate-200 h-full lg:rounded-2xl overflow-hidden">
           <Map addresses={addresses} />
         </div>

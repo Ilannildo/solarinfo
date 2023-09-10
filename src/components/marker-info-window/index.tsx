@@ -18,8 +18,6 @@ export function MarkerInfoWindow({ currentAddress }: MarkerInfoWindowProps) {
       }
     );
 
-  console.log(currentAddressBuildingInsightsResponse);
-
   return (
     <div className="w-full flex flex-col gap-4">
       <div className="w-full">

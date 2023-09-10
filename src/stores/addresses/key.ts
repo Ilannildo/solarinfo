@@ -5,3 +5,9 @@ export const createUseAddressBuildingInsightsKey = ({
 }: {
   address_id?: string;
 }): QueryKey => ["useAddressBuildingInsightsKey", address_id];
+
+export const createUseAddressInfoKey = ({
+  address_id,
+}: {
+  address_id?: string;
+}): QueryKey => ["useAddressInfoKey", address_id];

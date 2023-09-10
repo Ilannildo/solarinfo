@@ -49,7 +49,7 @@ export function Map({ addresses }: MapProps) {
         isFractionalZoomEnabled: true,
         streetViewControl: false,
         mapTypeControl: false,
-
+        zoomControl: false,
       }}
     >
       <MarkersList addresses={addresses} />

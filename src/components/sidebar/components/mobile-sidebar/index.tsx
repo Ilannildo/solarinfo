@@ -4,7 +4,7 @@ import { CardItem } from "@/components/card-item";
 import { useAddress } from "@/hooks/use-address";
 import { IAddress } from "@/stores/addresses/type";
 import { useEffect } from "react";
-import Carousel from "react-multi-carousel";
+import Carousel, { DotProps } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 interface SidebarProps {
@@ -43,8 +43,16 @@ export function MobileSidebar({ addresses }: SidebarProps) {
         onChangeAddress(addresses[0]);
       }, 500);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [addresses]);
+
+  const CustomDot = ({ index, active, onClick, carouselState }: DotProps) => {
+    return (
+      <li onClick={onClick}>
+        <div className="w-4 h-2 transition-all rounded-full mb-2 bg-slate-400 data-[active=true]:w-8 data-[active=true]:bg-slate-700" data-active={active} />
+      </li>
+    );
+  };
 
   return (
     <div className="fixed z-20 bottom-0 lg:hidden w-full mt-12">
@@ -53,8 +61,10 @@ export function MobileSidebar({ addresses }: SidebarProps) {
           responsive={responsive}
           ssr
           className="pb-8"
-          showDots={false}
-          arrows={true}
+          showDots
+          customDot={<CustomDot />}
+          dotListClass="gap-2"
+          arrows={false}
           afterChange={(previousSlide) =>
             handleChangeSlide(previousSlide, addresses[previousSlide + 1])
           }

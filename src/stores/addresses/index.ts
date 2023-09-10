@@ -1,6 +1,8 @@
 import { googleApiUrl } from "@/services/api";
 import { UseQueryOptions, useQuery } from "@tanstack/react-query";
-import { createUseAddressBuildingInsightsKey } from "./key";
+import {
+  createUseAddressBuildingInsightsKey
+} from "./key";
 import { IAddress, IBuildingInsightsResponse } from "./type";
 
 export const useAddressBuildingInsights = (
@@ -24,8 +26,8 @@ export const useAddressBuildingInsights = (
 
       const response = await fetch(`${googleApiUrl}/${params}`, {
         method: "GET",
-      })
-      if(response.ok) {
+      });
+      if (response.ok) {
         return await response.json();
       }
 
