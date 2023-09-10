@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Solar Info
 
-## Getting Started
+![Solar Energy Info](app-screenshot.png)
 
-First, run the development server:
+## Descrição
+
+O Solar Info é uma aplicação web que permite aos usuários encontrar informações sobre a energia solar disponível em um determinado endereço. Ele utiliza a API Solar do Google para obter dados de irradiação solar e a API de Mapas do Google para buscar endereços. O aplicativo foi desenvolvido com Next.js e estilizado com o Tailwind CSS, proporcionando uma experiência de usuário agradável e responsiva.
+
+## Recursos Principais
+
+- **Busca de Endereços:** Os usuários podem selecionar um endereços na aba lateral para encontrar informações de energia solar para esse local.
+
+- **Dados de Energia Solar:** O aplicativo exibe informações sobre a Paineis solares na área especificada.
+
+- **Visualização no Mapa:** Além das informações textuais, os resultados também são exibidos no mapa, permitindo aos usuários ter uma visão geográfica da distribuição da energia solar.
+
+## Capturas de Tela
+
+![Página Inicial](screenshot-home.png)
+
+![Resultados da Busca](screenshot-results.png)
+
+
+
+## Rodando localmente
+
+1. Clone o projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  git clone git@github.com:Ilannildo/solarinfo.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Entre no diretório do projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd solarinfo
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Instale as dependências
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Configure as chaves da API do Google:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Crie um arquivo `.env.local` na raiz do projeto.
 
-## Deploy on Vercel
+- Adicione suas chaves da API do Google e a API de endereços ao arquivo `.env.local`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  ```
+  NEXT_PUBLIC_API_URL=https://challenge.solarpipe.com.br/
+  NEXT_PUBLIC_API_GOOGLE_URL=https://solar.googleapis.com/v1/buildingInsights:findClosest
+  NEXT_PUBLIC_GOOGLE_MAP_API_KEY="YOUR_API_KEY"
+  ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. Inicie o servidor
+
+```bash
+  npm run dev
+```
+
+
+
+
+6. Acesse o aplicativo em seu navegador em `http://localhost:3000`.
+
+## Tecnologias Utilizadas
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [API Solar do Google](https://console.cloud.google.com/apis/library/solar.googleapis.com)
+- [API de Mapas do Google](https://console.cloud.google.com/apis/library/maps-backend.googleapis.com)
+
+## Contribuição
+
+Sinta-se à vontade para contribuir para o desenvolvimento deste projeto. Você pode abrir issues, enviar pull requests e compartilhar suas ideias.
+
+## Autor
+
+- Ilannildo V da Cruz
+- GitHub: [ilannildo](https://github.com/ilannildo)
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
