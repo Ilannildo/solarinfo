@@ -1,7 +1,5 @@
 # Solar Info
 
-![Solar Energy Info](app-screenshot.png)
-
 ## Descrição
 
 O Solar Info é uma aplicação web que permite aos usuários encontrar informações sobre a energia solar disponível em um determinado endereço. Ele utiliza a API Solar do Google para obter dados de irradiação solar e a API de Mapas do Google para buscar endereços. O aplicativo foi desenvolvido com Next.js e estilizado com o Tailwind CSS, proporcionando uma experiência de usuário agradável e responsiva.
@@ -16,9 +14,9 @@ O Solar Info é uma aplicação web que permite aos usuários encontrar informa�
 
 ## Capturas de Tela
 
-![Página Inicial](screenshot-home.png)
+![Página Inicial - Web](screenshot-home.png)
 
-![Resultados da Busca](screenshot-results.png)
+![Página Inicial - Mobile](screenshot-mobile.png)
 
 
 
