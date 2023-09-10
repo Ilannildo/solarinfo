@@ -14,9 +14,9 @@ O Solar Info é uma aplicação web que permite aos usuários encontrar informa�
 
 ## Capturas de Tela
 
-![Página Inicial - Web](screenshot-home.png)
+![Página Inicial - Web](public/screenshot-home.png)
 
-![Página Inicial - Mobile](screenshot-mobile.png)
+![Página Inicial - Mobile](public/screenshot-mobile.png)
 
 
 
